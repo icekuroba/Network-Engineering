@@ -1,0 +1,27 @@
+flowchart LR
+    subgraph ONPREM["On-Premises Enterprise Network"]
+        USERS["Users VLAN\n192.168.10.0/24"]
+        SERVERS["Servers VLAN\n192.168.20.0/24"]
+        MGMT["Management VLAN\n192.168.30.0/24"]
+        EDGE["Edge Router / Firewall"]
+    end
+
+    subgraph VPN["Site-to-Site VPN"]
+        TUNNEL["Encrypted VPN Tunnel\n172.16.0.0/30"]
+    end
+
+    subgraph CLOUD["Cloud Virtual Network"]
+        PUBLIC["Public Subnet\n10.10.1.0/24"]
+        APP["Private App Subnet\n10.10.2.0/24"]
+        DB["Database Subnet\n10.10.3.0/24"]
+        CLOUDFW["Cloud Firewall / Security Rules"]
+    end
+
+    USERS --> EDGE
+    SERVERS --> EDGE
+    MGMT --> EDGE
+    EDGE --> TUNNEL
+    TUNNEL --> CLOUDFW
+    CLOUDFW --> PUBLIC
+    CLOUDFW --> APP
+    CLOUDFW --> DB
