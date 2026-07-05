@@ -1,7 +1,5 @@
 # Network Engineering
 
-## Overview
-
 This repository contains hands-on network engineering labs and configurations focused on routing, switching, enterprise security, network automation, and hybrid networking.
 
 The goal is to document practical networking projects that strengthen core infrastructure skills and prepare for real-world network engineering scenarios.
