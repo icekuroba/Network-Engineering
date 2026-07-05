@@ -1,0 +1,12 @@
+severity,file,rule,message,recommendation
+LOW,sample_router_config.txt,service password-encryption missing,The configuration does not enable service password-encryption.,Enable service password-encryption to reduce exposure of plaintext passwords in the configuration.
+HIGH,sample_router_config.txt,enable secret missing,The configuration does not use enable secret.,Use enable secret instead of enable password for privileged EXEC access.
+MEDIUM,sample_router_config.txt,enable password used,"The configuration uses enable password, which is weaker than enable secret.",Replace enable password with enable secret.
+MEDIUM,sample_router_config.txt,plaintext password detected,A plaintext password was detected in the configuration.,Use stronger secret-based credentials and avoid storing plaintext passwords.
+HIGH,sample_router_config.txt,telnet enabled,VTY lines allow Telnet access.,Disable Telnet and allow SSH only with transport input ssh.
+MEDIUM,sample_router_config.txt,vty login local missing,VTY lines do not use login local.,Configure local user authentication with login local on VTY lines.
+HIGH,sample_router_config.txt,weak snmp community,SNMP uses a default or weak community string.,Replace public/private SNMP communities with strong values or use SNMPv3.
+MEDIUM,sample_router_config.txt,ospf passive-interface default missing,OSPF is configured without passive-interface default.,Use passive-interface default and explicitly enable OSPF only on required neighbor links.
+LOW,sample_switch_config.txt,service password-encryption missing,The configuration does not enable service password-encryption.,Enable service password-encryption to reduce exposure of plaintext passwords in the configuration.
+HIGH,sample_switch_config.txt,telnet enabled,VTY lines allow Telnet access.,Disable Telnet and allow SSH only with transport input ssh.
+MEDIUM,sample_switch_config.txt,vty login local missing,VTY lines do not use login local.,Configure local user authentication with login local on VTY lines.
